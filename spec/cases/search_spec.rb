@@ -25,9 +25,9 @@ describe LinkedIn::Search do
       end
 
       it "should perform a company search" do
-        results.companies.company.size.should == 10
-        results.companies.company.first.name.should == 'Apple'
-        results.companies.company.first.id.should == '162479'
+        results.companies.data.size.should == 10
+        results.companies.data.first.name.should == 'Apple'
+        results.companies.data.first.id.should == '162479'
       end
     end
 
@@ -40,9 +40,9 @@ describe LinkedIn::Search do
       end
 
       it "should perform a company search" do
-        results.companies.company.size.should == 10
-        results.companies.company.first.name.should == 'Apple'
-        results.companies.company.first.id.should == '162479'
+        results.companies.data.size.should == 10
+        results.companies.data.first.name.should == 'Apple'
+        results.companies.data.first.id.should == '162479'
       end
     end
 
@@ -55,7 +55,7 @@ describe LinkedIn::Search do
       end
 
       it "should return a facet" do
-        results.facets.facet.buckets.bucket.first.name.should == 'Information Technology and Services'
+        results.facets.data.buckets.bucket.first.name.should == 'Information Technology and Services'
       end
     end
 
@@ -68,11 +68,11 @@ describe LinkedIn::Search do
       end
 
       it "should perform a search" do
-        results.companies.company.size.should == 5
-        results.companies.company.first.name.should == 'iSquare - Apple Authorized Distributor in Greece & Cyprus'
-        results.companies.company.first.id.should == '2135525'
-        results.companies.company.last.name.should == 'iHouse - Apple Authorized Reseller'
-        results.companies.company.last.id.should == '3179177'
+        results.companies.data.size.should == 5
+        results.companies.data.first.name.should == 'iSquare - Apple Authorized Distributor in Greece & Cyprus'
+        results.companies.data.first.id.should == '2135525'
+        results.companies.data.last.name.should == 'iHouse - Apple Authorized Reseller'
+        results.companies.data.last.id.should == '3179177'
       end
     end
 
@@ -85,9 +85,9 @@ describe LinkedIn::Search do
       end
 
       it "should perform a search" do
-        results.companies.company.first.name.should == 'Apple'
-        results.companies.company.first.description.should == 'Apple designs Macs, the best personal computers in the world, along with OS X, iLife, iWork and professional software. Apple leads the digital music revolution with its iPods and iTunes online store. Apple has reinvented the mobile phone with its revolutionary iPhone and App Store, and is defining the future of mobile media and computing devices with iPad.'
-        results.companies.company.first.id.should == '162479'
+        results.companies.data.first.name.should == 'Apple'
+        results.companies.data.first.description.should == 'Apple designs Macs, the best personal computers in the world, along with OS X, iLife, iWork and professional software. Apple leads the digital music revolution with its iPods and iTunes online store. Apple has reinvented the mobile phone with its revolutionary iPhone and App Store, and is defining the future of mobile media and computing devices with iPad.'
+        results.companies.data.first.id.should == '162479'
       end
     end
 
@@ -103,10 +103,10 @@ describe LinkedIn::Search do
       end
 
       it "should perform a search" do
-        results.people.person.size.should == 10
-        results.people.person.first.first_name.should == 'Nicolas'
-        results.people.person.first.last_name.should == 'Sanguinetti'
-        results.people.person.first.id.should == 'RC79yvzbvs'
+        results.people.data.size.should == 10
+        results.people.data.first.first_name.should == 'Nicolas'
+        results.people.data.first.last_name.should == 'Sanguinetti'
+        results.people.data.first.id.should == 'RC79yvzbvs'
       end
     end
 
@@ -118,10 +118,10 @@ describe LinkedIn::Search do
       end
 
       it "should perform a search" do
-        results.people.person.size.should == 10
-        results.people.person.first.first_name.should == 'Nicolas'
-        results.people.person.first.last_name.should == 'Sanguinetti'
-        results.people.person.first.id.should == 'RC79yvzbvs'
+        results.people.data.size.should == 10
+        results.people.data.first.first_name.should == 'Nicolas'
+        results.people.data.first.last_name.should == 'Sanguinetti'
+        results.people.data.first.id.should == 'RC79yvzbvs'
       end
     end
 
@@ -133,10 +133,10 @@ describe LinkedIn::Search do
       end
 
       it "should perform a search" do
-        results.people.person.size.should == 5
-        results.people.person.last.first_name.should == 'Brian'
-        results.people.person.last.last_name.should == 'Lopez'
-        results.people.person.last.id.should == 'tl_5DxHenJ'
+        results.people.data.size.should == 5
+        results.people.data.last.first_name.should == 'Brian'
+        results.people.data.last.last_name.should == 'Lopez'
+        results.people.data.last.id.should == 'tl_5DxHenJ'
       end
     end
 
@@ -148,10 +148,10 @@ describe LinkedIn::Search do
       end
 
       it "should perform a search" do
-        results.people.person.size.should == 10
-        results.people.person.first.first_name.should == 'Charles P.'
-        results.people.person.first.last_name.should == 'Garcia'
-        results.people.person.first.id.should == 'Ttk0mNl2g0'
+        results.people.data.size.should == 10
+        results.people.data.first.first_name.should == 'Charles P.'
+        results.people.data.first.last_name.should == 'Garcia'
+        results.people.data.first.id.should == 'Ttk0mNl2g0'
       end
     end
 
@@ -164,8 +164,8 @@ describe LinkedIn::Search do
       end
 
       it "should perform a search" do
-        first_person = results.people.person.first
-        results.people.person.size.should == 10
+        first_person = results.people.data.first
+        results.people.data.size.should == 10
         first_person.first_name.should == 'Charles P.'
         first_person.last_name.should == 'Garcia'
         first_person.id.should == 'Ttk0mNl2g0'
@@ -182,10 +182,10 @@ describe LinkedIn::Search do
       end
 
       it "should perform a search" do
-        results.people.person.size.should == 10
-        results.people.person.first.first_name.should == 'Rodrigo'
-        results.people.person.first.last_name.should == 'Baraibar'
-        results.people.person.first.id.should == 'mRo8xS331Z'
+        results.people.data.size.should == 10
+        results.people.data.first.first_name.should == 'Rodrigo'
+        results.people.data.first.last_name.should == 'Baraibar'
+        results.people.data.first.id.should == 'mRo8xS331Z'
       end
     end
 

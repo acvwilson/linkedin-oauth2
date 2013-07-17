@@ -1,5 +1,6 @@
 require 'hashie'
 require 'xmlsimple'
+require 'active_support/core_ext/string/inflections.rb'
 
 module LinkedIn
   class Mash < ::Hashie::Mash
@@ -7,6 +8,7 @@ module LinkedIn
     # a simple helper to convert an xml string to a Mash
     def self.from_xml(xml_string)
       result_hash = xml_string.nil? || xml_string == "" ? {} : ::XmlSimple.xml_in(xml_string, forcearray: false)
+      result_hash = clean_search_hash(result_hash)
       new(result_hash)
     end
 
@@ -30,6 +32,33 @@ module LinkedIn
     end
 
     protected
+
+      # XML to hash conversions always end up with weird things like this:
+      # {
+      #   "people_search" => {
+      #     "people" => {
+      #       "person" => [Array of people],
+      #       "count"  => 25
+      #     }
+      #   }
+      # }
+      #
+      # This will return a more reasonable results like this:
+      # {
+      #   "people" => {
+      #     "data" => [Array of people],
+      #     "count"  => 25
+      #   }
+      # }
+      def self.clean_search_hash(hash)
+        hash.each do |key, value|
+          if hash[key].is_a?(Hash) && collection = hash[key].delete(key.singularize)
+            hash[key]['data'] = collection
+          end
+        end
+
+        hash
+      end
 
       def contains_date_fields?
         self.year? && self.month? && self.day?

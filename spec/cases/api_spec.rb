@@ -119,8 +119,8 @@ describe LinkedIn::Api do
       data.name.should == "Amazon"
       data.employee_count_range.name.should == "10001+"
       data.industry.should == "Internet"
-      data.locations.location.address.city.should == "Seattle"
-      data.locations.location.is_headquarters.should == "true"
+      data.locations.data.address.city.should == "Seattle"
+      data.locations.data.is_headquarters.should == "true"
     end
   end
 

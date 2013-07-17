@@ -5,6 +5,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency 'hashie', '~> 2.0'
   gem.add_dependency 'oauth2', '~> 0.9'
   gem.add_dependency 'xml-simple', '~> 1.1'
+  gem.add_dependency 'activesupport', '~> 4.0.0'
   gem.add_development_dependency 'rake', '~> 0.9'
   gem.add_development_dependency 'rdoc', '~> 3.8'
   gem.add_development_dependency 'rspec', '~> 2.6'
