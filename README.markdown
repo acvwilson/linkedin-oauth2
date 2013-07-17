@@ -1,8 +1,6 @@
 # LinkedIn
 
-Ruby wrapper for the [LinkedIn API](http://developer.linkedin.com). Heavily inspired by [John Nunemaker's](http://github.com/jnunemaker) [Twitter gem](http://github.com/jnunemaker/twitter), the LinkedIn gem provides an easy-to-use wrapper for LinkedIn's Oauth/XML APIs.
-
-Travis CI : [![Build Status](https://secure.travis-ci.org/pengwynn/linkedin.png)](http://travis-ci.org/pengwynn/linkedin)
+Ruby wrapper for the [LinkedIn API](http://developer.linkedin.com). Heavily inspired by [John Nunemaker's](http://github.com/jnunemaker) [Twitter gem](http://github.com/jnunemaker/twitter), the LinkedIn gem provides an easy-to-use wrapper for LinkedIn's Oauth2/XML APIs.
 
 ## Installation
 
@@ -12,7 +10,7 @@ Travis CI : [![Build Status](https://secure.travis-ci.org/pengwynn/linkedin.png)
 
 ### Authenticate
 
-LinkedIn's API uses Oauth for authentication. Luckily, the LinkedIn gem hides most of the gory details from you.
+LinkedIn's API uses Oauth2 for authentication. Luckily, the LinkedIn gem hides most of the gory details from you.
 
 ```ruby
 require 'rubygems'
@@ -21,7 +19,7 @@ require 'linkedin'
 # get your api keys at https://www.linkedin.com/secure/developer
 client = LinkedIn::Client.new('your_consumer_key', 'your_consumer_secret')
 
-# authorize from previously fetched access keys
+# authorize from previously fetched oauth2 access tokens
 client.authorize_from_access("OU812")
 
 # you're now free to move about the cabin, call any API method
@@ -38,9 +36,6 @@ client.profile(:id => 'gNma67_AdI')
 # get a profile for someone via their public profile url
 client.profile(:url => 'http://www.linkedin.com/in/asa.wilson')
 ```
-
-
-More examples in the [examples folder](http://github.com/pengwynn/linkedin/blob/master/examples).
 
 If you want to play with the LinkedIn api without using the gem, have a look at the [apigee LinkedIn console](http://app.apigee.com/console/linkedin).
 
