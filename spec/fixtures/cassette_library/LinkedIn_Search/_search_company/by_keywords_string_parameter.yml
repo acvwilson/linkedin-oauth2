@@ -1,0 +1,107 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.linkedin.com:443/v1/company-search?keywords=apple&oauth2_access_token=1234
+    body: 
+    headers:
+      user-agent:
+      - Faraday v0.8.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hlLUNveW90ZS8xLjE=
+      !binary "eC1saS1yZXF1ZXN0LWlk":
+      - !binary |-
+        SEc4MzhWOTJLMw==
+      !binary "dmFyeQ==":
+      - !binary |-
+        Kg==
+      !binary "eC1saS1mb3JtYXQ=":
+      - !binary |-
+        eG1s
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        VHVlLCAxNiBKdWwgMjAxMyAxOTowODo1NyBHTVQ=
+    body: !binary |-
+      H4sIAAAAAAAAALyWTXPaMBCG7/kVGh96KsFfYNyCM4ROmkzTTCY0melR2Bui
+      iZBcfaRxf33XgA0JmAydkptWsvZ9dqVduX/yPOPkCZRmUgwc79h1CIhUZkxM
+      B87tj7NWzyHaUJFRLgUMnAK0c5Ic9VM5y6koWhqoSh+SI0KWUww0MdJQPnBi
+      PwgckkorDLp2544UDl2n/L7eUSwstFmWeF0/jOJ+G4fVrKAzSIZ5zqHfno8X
+      m9svdm/1FfuR1+CK3NGUGgxa7+k0inpdv7vp9ZRNycLzueRl+vRHciHSY5JN
+      KFktXggDSsyVKSc3QLkp9g3L871gC8FC4AOd5Z/JUGuZMmpg//B8Nww3nY8N
+      Hv8yhrHk9l9Sh9idjt/ZdM7GvyxVQFpLgaE1D1KxP5CRL0wbxSbWSEWYIF8V
+      QFoFOSpyZfeGCNyg426J8IxxeK4iRLlKZWzzXCqzp0zgBT4GuylzDULogj9h
+      pdCl2neqHsHglSHXSk4Vne2r5UadThhsao3wW4v3jdwxzum0Pr8c8G5wzOze
+      QUWxF0VbDvBcWr31/G5AA+egGpUqA/vG3BR21lKgLTc6KRsIblybKb+4pymY
+      usl4VTOZT9dY2MIg4XJR46VGBi+RL+u1FRiuTWz6uO696lVri6uJSsfqT+5L
+      jZXOrWAG8zA2r4uxdoDtMfG7vaD0UI7XVzF5kOL+5J5yjf2vtldQ7ddUjZjT
+      yZuY3/AWZnLWyBmF/sExMZu9sIlzTAU5U1SkTKeSnNKCDBXQRt4g9N6DN2rM
+      KzYsWlbgFfwmP6V6JCNm3mJ23YMzC958Fa7APIDi+ObvuK9x7+CMKW1mHFFB
+      s+YU+uUvxIHxqG3GG1p8tbDD7iD0OgcnZKKZ8EJku+jc7uHpzA46bL5FI50X
+      h+9R1GH8VlFfSk2GYoo6endJe/F/6u6VrauXtH71lkNcqJ/X+uf8bwAAAP//
+      a3sWeeYLAAA=
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.linkedin.com:443/v1/company-search?keywords=apple&oauth2_access_token=1234
+    body: 
+    headers:
+      user-agent:
+      - Faraday v0.8.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 401
+      message: !binary |-
+        VW5hdXRob3JpemVk
+    headers:
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hlLUNveW90ZS8xLjE=
+      !binary "eC1saS1yZXF1ZXN0LWlk":
+      - !binary |-
+        S0s1SkRYUFlaRg==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        V2VkLCAxNyBKdWwgMjAxMyAxNjo1MDo0MyBHTVQ=
+      !binary "dmFyeQ==":
+      - !binary |-
+        Kg==
+      !binary "eC1saS1mb3JtYXQ=":
+      - !binary |-
+        eG1s
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+    body: !binary |-
+      H4sIAAAAAAAAAE2OwQ6CMBBE7/2KpncoBBRNSrkYEuXiQRP11sCGNEKrbSH6
+      9xaDkdvOvNmdZcWr7/AIxkqtchKHEcGgat1I1ebkfCqDDcHWCdWITivIyRss
+      KThiYIw2HGHMPHWD5WkUMzrPk+1kD172Dx4nWRpl202apMma0T+YYgaeg5eB
+      bHhVrQ67y/F6Kxld2FPq2xb4t4BHjC7UBP05K1rgezWKTjZY1LV3sNN3UCGj
+      P4zmRY4+URkIz/UAAAA=
+    http_version: '1.1'

@@ -1,0 +1,111 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.linkedin.com:443/v1/people-search:(people:(id,first-name,last-name,public-profile-url,picture-url),num-results)?first-name=Charles&last-name=Garcia&oauth2_access_token=1234
+    body: 
+    headers:
+      user-agent:
+      - Faraday v0.8.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hlLUNveW90ZS8xLjE=
+      !binary "eC1saS1yZXF1ZXN0LWlk":
+      - !binary |-
+        WFNRMEFJUkk1TQ==
+      !binary "dmFyeQ==":
+      - !binary |-
+        Kg==
+      !binary "eC1saS1mb3JtYXQ=":
+      - !binary |-
+        eG1s
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        VHVlLCAxNiBKdWwgMjAxMyAxOTowOTowNyBHTVQ=
+    body: !binary |-
+      H4sIAAAAAAAAAMxXXXOqSBB9v7/C8nlxQEXxVuItQUSJXxGE6Is1wvARYQaZ
+      AYm/fjFe72Zrb5XZxK3NA1XdPc2Z6VOnu2bufhRxVMlRSkOC76tCja9WEHaI
+      G2L/vro0B5xUrVAGsQsjgtF99QXR6o/ut7sEkSRCHEUwdYLut0rlZ6TCCINR
+      iSSUSA7JMCtt/hUjLU2+esp9zU4pwWendEO3a7IdH0+jus/fgdK9rHhhShmH
+      YYy6SgDTCNHKvHYH3oQvmRG8RLTyUCG8A39FLjlJto1Ch0tS4oXl8bM06gaM
+      Jd8BOBwOtSjEO1SWXnNIDEIMnPOGif8T7zd//wIOHZalf0OMa04twju3hHXc
+      M2acpKevAPwm23gDrakW40ImuJ1S7SlpahStxrqmdmyTxoPFuvTbVtGhbh9b
+      gciPMisxR3slz2MJG1Jf7z939PU+mJQne7P9mWDwluHf0J0NdSqyIx9ur9D9
+      Lq7/qCiD3s0Iv8b31eJSShWuJ4RH7ZqWFu/TUkVPa58vb4dDP2AHBCMWxBBD
+      H8UIs9vqarn2odaSt/K6qQVKZC2a/UgTt5ajtxWlkVqTiV368mBoLZkvDqiz
+      MrRsHLp65PmNVq9Dl0Xa12zHyHvSR3Q1O2b6WG2ITfMWuuJMsg3xJ5kvUy/K
+      4s7S4tgJFgigybdBo/0JpdE+eWRm0efwLcq9WQcF/8XIIoonGW7GH2fJ43TD
+      VDSGc+NgPefr4WgvKuqwteAN9VBXZ8li1MjJ447PQsJryxztZWXzODL7K6V/
+      rD/MW/FHpGVGfG/6HIxd9Qtw/U9RgXoLCNs62Nal2/KOXlzxIZvSHXOHpipw
+      rQWkD9AZPO1fbMMNObJ8th7g2Fr00IQZe/ZEdXsWR3tCEwyhNrOL0bKwF0ey
+      OQ37f8+75AloIqTr5bVp+j/xLoJmSwRbnv9EH0/E6aZoPZHty9esUQKCWAcN
+      uL2xtOZ5lkDspcwniayEqnycJ9kgTLm1m3AsJFNTSIzd3JtmeojFzVMuSqyf
+      +jO+2SmOc89+kJlAOofVkn5IWvv5YRblyPW+Qkufx+fV28eHbntZzrXpYsTT
+      jeoy2c6QY7R1r/M8EcmBtWxomKXvdrSXyJp2em6girPGxG8Kzvg4zAei0Zbr
+      0kqG6Xy1/wjPwaphONAeWV9U3kITtGAbSML7Wvhkn14brzbOYi5FNIsY7TbE
+      cva+DXy7pP56qvwZAAD//91+9m3zDAAA
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.linkedin.com:443/v1/people-search:(people:(id,first-name,last-name,public-profile-url,picture-url),num-results)?first-name=Charles&last-name=Garcia&oauth2_access_token=1234
+    body: 
+    headers:
+      user-agent:
+      - Faraday v0.8.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 401
+      message: !binary |-
+        VW5hdXRob3JpemVk
+    headers:
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hlLUNveW90ZS8xLjE=
+      !binary "eC1saS1yZXF1ZXN0LWlk":
+      - !binary |-
+        RUVXTDRKODE1Qg==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        V2VkLCAxNyBKdWwgMjAxMyAxNjo1MDo0NSBHTVQ=
+      !binary "dmFyeQ==":
+      - !binary |-
+        Kg==
+      !binary "eC1saS1mb3JtYXQ=":
+      - !binary |-
+        eG1s
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+    body: !binary |-
+      H4sIAAAAAAAAAE2OUQuCMBSF3/0VY+86pZUT5oTAoOix6HnoRUa61aZS/74t
+      jHy753zn3nN59Rp6NIN1yugSZ0mKEejGtEp3Jb5eDjHDyI1St7I3Gkr8Bocr
+      EXGw1lgRIcQ9HScnaJpxsszBHtUAXg4PkW1ymuYFozvKCk7+IMQsPCcvY9WK
+      ur6d6Yll2z0nKzukvm2xfwtEyslKBejPOdmBOOpZ9qpFsmm8g0ZzB51w8sPR
+      siiiD764f7v1AAAA
+    http_version: '1.1'

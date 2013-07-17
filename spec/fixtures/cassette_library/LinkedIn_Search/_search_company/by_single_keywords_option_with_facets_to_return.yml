@@ -1,0 +1,107 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.linkedin.com:443/v1/company-search?facets=industry&keywords=apple&oauth2_access_token=1234
+    body: 
+    headers:
+      user-agent:
+      - Faraday v0.8.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hlLUNveW90ZS8xLjE=
+      !binary "eC1saS1yZXF1ZXN0LWlk":
+      - !binary |-
+        V0U1UlowWDNFTw==
+      !binary "dmFyeQ==":
+      - !binary |-
+        Kg==
+      !binary "eC1saS1mb3JtYXQ=":
+      - !binary |-
+        eG1s
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        VHVlLCAxNiBKdWwgMjAxMyAxOTowODo1OSBHTVQ=
+    body: !binary |-
+      H4sIAAAAAAAAALxWS3PaMBC+91dofOipBD8xTMEZkjaPQ2cyIc1dsReiiSy5
+      eqRxf33XgA0UTIZO3ZtWj+/7drW70vj8LefkFZRmUkwc78x1CIhUZkwsJs73
+      h6ve0CHaUJFRLgVMnBK0c558GKcyL6goexqoSp+TD4SspxhoYqShfOKM/CBw
+      SCqtMAjtLoEUDl2n2t+cKFcW2ixLvIEfxqNxH4f1rKA5JNOi4DDuL8erw/2d
+      0wexRn7stUCRR5pSg07rE0HjeDjwB/uoF2xBVsg3klfh05/IrUjPSPZEyWbx
+      VhhQYslMObkHyk15qlue7wUHFKwIPtK8+EymWsuUUQOnu+e7YbgPPjN4/Wsf
+      ZpLbvwkdyo4iP9oHZ7MfliogvTXB1JpnqdgvyMgXpo1iT9ZIRZgg1wogrZ28
+      LAtlTxYRuEHkHvDwinF4qz1EupplZotCKnMiTeAFPjq7T3MHQuiSv2Kl0DXb
+      N6pewGDKkDslF4rmp3K5cRSFwT7XJe61mG/kkXFOF839FYC5wTGyJzsVj7w4
+      PnCBN9Lqg/d3Dxo4B9XKVBvYN5amsHlPgbbc6KRqIHhwa6baMacpmKbJeHUz
+      WU43srCFoSyRWUyfsuLIYFfybbO2EYZrTzZ92Uave9XW4mai5hkNdhm2WeZS
+      5ctyJw+QPgvJ5aIk2E/JDNQrS3cLtAHFlpn4fuhWuNV4exUDCqmBLJlTrrEn
+      NvZGaP9Ppa3SwzblTe7M5Nz8xOps1elhQ+pc55EIVw0VTKu8yPc6Vxe8G8Ub
+      qrKjUQyDuHOZQ7dN56YFVak5zfBHYJhGu1VvEIed6/WPZKfQNse4fq3glRQs
+      bS+kIBx0LzVuk3oPhjJ+pMq7F+e5o3cT9BqtI73IjbrPzjaNDxWqzHOLt7z/
+      Z9vR6Y3+Q7G3ZuWVlNn613ABWEL45B6ROvxHUmtb169r8xKuh7jQPLnNh/13
+      AAAA//9O7rOw+gsAAA==
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.linkedin.com:443/v1/company-search?facets=industry&keywords=apple&oauth2_access_token=1234
+    body: 
+    headers:
+      user-agent:
+      - Faraday v0.8.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 401
+      message: !binary |-
+        VW5hdXRob3JpemVk
+    headers:
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hlLUNveW90ZS8xLjE=
+      !binary "eC1saS1yZXF1ZXN0LWlk":
+      - !binary |-
+        NERDWk43TTZERA==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        V2VkLCAxNyBKdWwgMjAxMyAxNjo1MDo0NCBHTVQ=
+      !binary "dmFyeQ==":
+      - !binary |-
+        Kg==
+      !binary "eC1saS1mb3JtYXQ=":
+      - !binary |-
+        eG1s
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+    body: !binary |-
+      H4sIAAAAAAAAAE2OMQ+CMBCF9/6KpjsUQhVMShkkJg466eLWwIU0QqstEP33
+      tgYj2733vbt3vHoNPZ7BOmV0SdI4IRh0Y1qlu5JcL4eoINiNUreyNxpK8gZH
+      KoE4WGusQBhzT8fJCZaknC5zsEc1gJfDQ6RZzpJ8VzCWbjJO/yDELDwnLyPV
+      Clbvb+f8tK1rTld2SH3bIv8WiITTlQrQn3OyA3HUs+xVi2XTeAeP5g465vSH
+      0bIo0AdfHwC59QAAAA==
+    http_version: '1.1'

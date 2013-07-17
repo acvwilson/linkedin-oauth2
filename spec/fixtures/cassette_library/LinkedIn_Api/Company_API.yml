@@ -1,0 +1,198 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.linkedin.com:443/v1/companies/id=1586?oauth2_access_token=atoken
+    body: 
+    headers:
+      user-agent:
+      - Faraday v0.8.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hlLUNveW90ZS8xLjE=
+      !binary "eC1saS1yZXF1ZXN0LWlk":
+      - !binary |-
+        MU8yOUU2OUFHMA==
+      !binary "dmFyeQ==":
+      - !binary |-
+        Kg==
+      !binary "eC1saS1mb3JtYXQ=":
+      - !binary |-
+        eG1s
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        V2VkLCAxNyBKdWwgMjAxMyAxNzoxMDowMSBHTVQ=
+    body: !binary |-
+      H4sIAAAAAAAAALKxr8jNUShLLSrOzM+zVTLUM1BSSM1Lzk/JzEu3VQoNcdO1
+      UFIoLknMS0nMyc9LtVWqTC1WsrfjsknOzy1IzKu041JQsMlMsTM0tTCz0Qcy
+      QPy8xNxUO8fcxKr8PBt9MIfLRh+uASBAAAAA//+gs8oWcwAAAA==
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.linkedin.com:443/v1/companies/universal-name=acme?oauth2_access_token=atoken
+    body: 
+    headers:
+      user-agent:
+      - Faraday v0.8.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hlLUNveW90ZS8xLjE=
+      !binary "eC1saS1yZXF1ZXN0LWlk":
+      - !binary |-
+        NEJPV0U2WDFJVw==
+      !binary "dmFyeQ==":
+      - !binary |-
+        Kg==
+      !binary "eC1saS1mb3JtYXQ=":
+      - !binary |-
+        eG1s
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        V2VkLCAxNyBKdWwgMjAxMyAxNzoxMDowMSBHTVQ=
+    body: !binary |-
+      H4sIAAAAAAAAALKxr8jNUShLLSrOzM+zVTLUM1BSSM1Lzk/JzEu3VQoNcdO1
+      UFIoLknMS0nMyc9LtVWqTC1WsrfjsknOzy1IzKu041JQsMlMsTMxNTAxM7LR
+      BzJBInmJual2jsm5qQoe+UDCJz8xr9hGHyzKZaMP1wsQIAAA//9bOipVfgAA
+      AA==
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.linkedin.com:443/v1/companies?email-domain=acme.com&oauth2_access_token=atoken
+    body: 
+    headers:
+      user-agent:
+      - Faraday v0.8.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 404
+      message: !binary |-
+        Tm90IEZvdW5k
+    headers:
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hlLUNveW90ZS8xLjE=
+      !binary "eC1saS1yZXF1ZXN0LWlk":
+      - !binary |-
+        VjJQWloyTEZaQg==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        V2VkLCAxNyBKdWwgMjAxMyAxNzoxMDowMiBHTVQ=
+      !binary "dmFyeQ==":
+      - !binary |-
+        Kg==
+      !binary "eC1saS1mb3JtYXQ=":
+      - !binary |-
+        eG1s
+      !binary "eC1saS1yMi13LWljLTI=":
+      - !binary |-
+        Y29tLmxpbmtlZGluLmNvbnRhaW5lci5kcmM9MSU3RUFQUkclMkMxJTdFQkVN
+        RCUyQzE=
+      - !binary |-
+        Y29tLmxpbmtlZGluLmNvbnRhaW5lci5kc2M9MQ==
+      - !binary |-
+        Y29tLmxpbmtlZGluLmNvbnRhaW5lci5ycGMuY2x1c3Rlci5zZXJ2aWNlSW5m
+        bz1QUk9ELUVMQTQlMkZhcHByZWclMkYwLjAuMjAwMC1SQzEuMjg4NzElMkZl
+        bGE0LWFwcDQ0NjglMkZpMDAx
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+    body: !binary |-
+      H4sIAAAAAAAAAE2OPW/CMBCG9/yKkycY0jhppILkGAkhpg4d2g7ZrPiAk+Jz
+      sA0t/75ORVWmu/dDz53afLsRrhgiee5E/SQFIA/eEh878fG+L1cCYjJszegZ
+      O3HDKDa6UBiCD7oAUDlNl6hb2arqvs92IodZuknXzy+tXNVSNu1aquo/mGsB
+      z5csS7L6s3nr++Z1329V9WDPrd9rZX4LdSY8qDnMuGiOqHdkgX2CA7GFwbvJ
+      8A2+KJ0gnRDihAMdCC2gMzSC9XnwIi5V9Qco7mhd/AD+FDybFwEAAA==
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.linkedin.com:443/v1/companies/id=1586:(id,name,industry,locations:(address:(city,state,country-code),is-headquarters),employee-count-range)?oauth2_access_token=atoken
+    body: 
+    headers:
+      user-agent:
+      - Faraday v0.8.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hlLUNveW90ZS8xLjE=
+      !binary "eC1saS1yZXF1ZXN0LWlk":
+      - !binary |-
+        UkFFVFdWVlhEUA==
+      !binary "dmFyeQ==":
+      - !binary |-
+        Kg==
+      !binary "eC1saS1mb3JtYXQ=":
+      - !binary |-
+        eG1s
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        V2VkLCAxNyBKdWwgMjAxMyAxNzoxMDowMiBHTVQ=
+    body: !binary |-
+      H4sIAAAAAAAAAGxRwU7DMAy97yuiXFFJewDtkGbaBWlnQJytxhqVUmckLqJ8
+      PW66atXEze89O+/ZsYefIahvTLmP1OrmsdYKqYu+p3Or399eqr1WmYE8hEjY
+      6gmzPrid7eJwAZrcTinbe9c87Z+tkWLGBAO64wC/kawpoHSRHzOnyZ2IMRGy
+      9K/UrIfYAUuKrDgyBAmjZ36jLFAI8D5hzisWput5cq8IzAGtKegmSn5G93G0
+      Zqk2Y3Ek8a9kYXRjlsktsdqZOz/b5+oTwX+NkGSV7DiN4nrPLuHNNv0NFdni
+      cAlxQqyKb5WAzldbWxKc5kRrkuWuTV3XzcPmrub/R+bJ6xf9CRAAAP//qY83
+      2eUBAAA=
+    http_version: '1.1'

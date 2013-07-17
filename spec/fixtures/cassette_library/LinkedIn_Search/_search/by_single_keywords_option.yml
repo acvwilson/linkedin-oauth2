@@ -1,0 +1,99 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.linkedin.com:443/v1/people-search?keywords=github&oauth2_access_token=1234
+    body: 
+    headers:
+      user-agent:
+      - Faraday v0.8.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hlLUNveW90ZS8xLjE=
+      !binary "eC1saS1yZXF1ZXN0LWlk":
+      - !binary |-
+        WjFPMFpNWEtUNg==
+      !binary "dmFyeQ==":
+      - !binary |-
+        Kg==
+      !binary "eC1saS1mb3JtYXQ=":
+      - !binary |-
+        eG1s
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        VHVlLCAxNiBKdWwgMjAxMyAxOTowOTowNCBHTVQ=
+    body: !binary |-
+      H4sIAAAAAAAAANSUTW+CQBCG7/4Kwp2i1dY2QYwtVqvGqi2J8WK2MMKaZRd3
+      Fyr++oJf9VAkpKfeZt55M89kMhmjvQ2IEgMXmNGWWrupqgpQh7mYei3V/njR
+      HlRFSERdRBiFlpqAUNtmxQiBhQQ0AYg7vllRlKOiSCYRSTvV0k4Oi6hM4+q+
+      B0/Dqpp5924uGD0kaYpdc/bcfEzi3WcsDD1NT5UV5kJqFAVgjrHDCErLF9rJ
+      lupH5R1RL8IUpMSG/iMfsPol95chevFgDSvqNay8ISYAvGCCDiGIlmdPoyVs
+      3BmmWh57BFCAngEmJCnP7ob9rh1/iYDnsYcJKYKPAUm/PHs9v7c7QfPVq+ex
+      nzjOFnoVbjFCyrNDjmMkIQ98Ll9Fn11l6bvF1N4snMZknjfAgAm/aOvY8RkR
+      5enBePgWWosOTvLvjRWtvZe9Dur9t81Lsryztn2gg7/c3IiFsLsKz+LsLe5j
+      GgUaBxERKczbetXQL4XKyXr+qd8CBAAA///8wP/8nAUAAA==
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.linkedin.com:443/v1/people-search?keywords=github&oauth2_access_token=1234
+    body: 
+    headers:
+      user-agent:
+      - Faraday v0.8.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 401
+      message: !binary |-
+        VW5hdXRob3JpemVk
+    headers:
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hlLUNveW90ZS8xLjE=
+      !binary "eC1saS1yZXF1ZXN0LWlk":
+      - !binary |-
+        Mkw1VjdCUjdJOA==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        V2VkLCAxNyBKdWwgMjAxMyAxNjo1MDo0NSBHTVQ=
+      !binary "dmFyeQ==":
+      - !binary |-
+        Kg==
+      !binary "eC1saS1mb3JtYXQ=":
+      - !binary |-
+        eG1s
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+    body: !binary |-
+      H4sIAAAAAAAAAE2OwQ6CMBBE73xF0ztQFAImZUk8mJB4Muq9oRvSCK22QPTv
+      bQ1GbzvzZneWN89xIAtap4yuaZYwSlB3Rird1/RyPsQVJW4SWorBaKzpCx1t
+      IOJorbEQEcI9nWYHOct4us7BntSIXo53yLZlzspdlRdFyPxAiFl8zF7GSsLm
+      WFzL/alsK57+2SH1aYv9WwiMp38qQH/OiR6h1YsYlCSi67xDJnNDnfD0i6N1
+      EaI3zITxr/UAAAA=
+    http_version: '1.1'

@@ -1,0 +1,100 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.linkedin.com:443/v1/people-search?company-name=IBM&oauth2_access_token=1234
+    body: 
+    headers:
+      user-agent:
+      - Faraday v0.8.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hlLUNveW90ZS8xLjE=
+      !binary "eC1saS1yZXF1ZXN0LWlk":
+      - !binary |-
+        VEJBUzlBRTFJWg==
+      !binary "dmFyeQ==":
+      - !binary |-
+        Kg==
+      !binary "eC1saS1mb3JtYXQ=":
+      - !binary |-
+        eG1s
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        VHVlLCAxNiBKdWwgMjAxMyAxOTowOTowOCBHTVQ=
+    body: !binary |-
+      H4sIAAAAAAAAAJyU206DQBCG7/sUhBuvECrGaEIxUk+pJdUeTOxNM8JC1+7B
+      7i4V+jY+iy8mVKu9cCX0bubfyXz/TDbjneeUGCskJOasY7YPHdNALOIxZmnH
+      nIyvrVPTkApYDIQz1DELJM1zv+W9Iv5KkCURiGjutwzjWzEUV0DKTu2yU8Qz
+      psrY2fQQZeiYVe2mWkjOvpIyxbFPh/w0H7lue+rZZbp9SbCQymJAkT/kscAp
+      9+wdbVtGYKsEIAA/g/DsX+2Lae9C/3DAVsft2ePZTfimc3AJFH+8sxoHN+VO
+      MDTnu5cTzvLpMurp+FdE8Tp6jIwRz9Z78Gep84LTWfiw0PEDgaGOHyBCmrOt
+      QW96H62K+FHHDkFUS/2XfbHO9ph7MQzSZO2Mk0DLxtEcEKmhh5BjiglGrLkH
+      asX5/OHipPui89BDSSJQUeOhz5uz4dZZDo5Hb8uxjt2t/XWDg355CormcPX0
+      vJjQe3ehhfezCGQNvssJwWyP2W9l6PQKpWSuw99hUfvnx3NOK4//0Ku4OpCb
+      mGXUEkhmREn/zD3y7F2htS39ua6fAgQAAP//8/JsEaYFAAA=
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.linkedin.com:443/v1/people-search?company-name=IBM&oauth2_access_token=1234
+    body: 
+    headers:
+      user-agent:
+      - Faraday v0.8.7
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 401
+      message: !binary |-
+        VW5hdXRob3JpemVk
+    headers:
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hlLUNveW90ZS8xLjE=
+      !binary "eC1saS1yZXF1ZXN0LWlk":
+      - !binary |-
+        T1VVQTYwRlRITA==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        V2VkLCAxNyBKdWwgMjAxMyAxNjo1MDo0NiBHTVQ=
+      !binary "dmFyeQ==":
+      - !binary |-
+        Kg==
+      !binary "eC1saS1mb3JtYXQ=":
+      - !binary |-
+        eG1s
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+    body: !binary |-
+      H4sIAAAAAAAAAE2OwQ6CMBBE73xF0zu0KEFMSokXoomJF/iAhm5II7TaAtG/
+      tzUYue3Mm91ZVr3GAS1gnTK6xGlCMQLdGal0X+K2qeMCIzcJLcVgNJT4DQ5X
+      PGJgrbE8Qoh5Os2OZzRlZJ2DPakRvBwfPN0fMno4Flle0B0jfxBiFp6zl7GS
+      /Na2p5zWzfnKyMYOqW9b7N8CThnZqAD9OSd64Be9iEFJJLrOO2gyd9AJIz8c
+      rYs8+gBZMWI+9QAAAA==
+    http_version: '1.1'
