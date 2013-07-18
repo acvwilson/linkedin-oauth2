@@ -25,21 +25,6 @@ describe LinkedIn::Api do
     client.connections.should be_an_instance_of(LinkedIn::Mash)
   end
 
-  it "should be able to view network_updates" do
-    stub_request(:get, "https://api.linkedin.com/v1/people/~/network/updates?oauth2_access_token=atoken").to_return(body: "")
-    client.network_updates.should be_an_instance_of(LinkedIn::Mash)
-  end
-
-  it "should be able to view network_update's comments" do
-    stub_request(:get, "https://api.linkedin.com/v1/people/~/network/updates/key=network_update_key/update-comments?oauth2_access_token=atoken").to_return(body: "")
-    client.share_comments("network_update_key").should be_an_instance_of(LinkedIn::Mash)
-  end
-
-  it "should be able to view network_update's likes" do
-    stub_request(:get, "https://api.linkedin.com/v1/people/~/network/updates/key=network_update_key/likes?oauth2_access_token=atoken").to_return(body: "")
-    client.share_likes("network_update_key").should be_an_instance_of(LinkedIn::Mash)
-  end
-
   it "should be able to search with a keyword if given a String" do
     stub_request(:get, "https://api.linkedin.com/v1/people-search?keywords=business&oauth2_access_token=atoken").to_return(body: "")
     client.search("business").should be_an_instance_of(LinkedIn::Mash)
@@ -121,6 +106,25 @@ describe LinkedIn::Api do
       data.industry.should == "Internet"
       data.locations.data.address.city.should == "Seattle"
       data.locations.data.is_headquarters.should == "true"
+    end
+  end
+
+  context "Network API" do
+    use_vcr_cassette :record => :new_episodes
+
+    it "should be able to view network_updates" do
+      stub_request(:get, "https://api.linkedin.com/v1/people/~/network/updates?oauth2_access_token=atoken").to_return(body: "")
+      client.network_updates.should be_an_instance_of(LinkedIn::Mash)
+    end
+
+    it "should be able to view network_update's comments" do
+      stub_request(:get, "https://api.linkedin.com/v1/people/~/network/updates/key=network_update_key/update-comments?oauth2_access_token=atoken").to_return(body: "")
+      client.share_comments("network_update_key").should be_an_instance_of(LinkedIn::Mash)
+    end
+
+    it "should be able to view network_update's likes" do
+      stub_request(:get, "https://api.linkedin.com/v1/people/~/network/updates/key=network_update_key/likes?oauth2_access_token=atoken").to_return(body: "")
+      client.share_likes("network_update_key").should be_an_instance_of(LinkedIn::Mash)
     end
   end
 

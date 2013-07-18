@@ -12,6 +12,24 @@ describe LinkedIn::Mash do
     end
   end
 
+  describe ".clean_search_hash" do
+    it "should modify the hash to make naming sane" do
+      hash = {'people' => {'person' => [{'name' => "Josh Kalderimis"}]}}
+      clean_hash = LinkedIn::Mash.clean_search_hash(hash)
+
+      clean_hash['people'].should_not have_key('person')
+      clean_hash['people'].should have_key('data')
+    end
+    
+    it "should modify the hash to avoid collisions" do
+      hash = {'update' => [{'name' => "Josh Kalderimis"}]}
+      clean_hash = LinkedIn::Mash.clean_search_hash(hash)
+
+      clean_hash.should_not have_key('update')
+      clean_hash.should have_key('data')
+    end
+  end
+
   describe "#convert_keys" do
     let(:mash) do
       LinkedIn::Mash.new({

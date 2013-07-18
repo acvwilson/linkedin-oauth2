@@ -35,11 +35,9 @@ module LinkedIn
 
       # XML to hash conversions always end up with weird things like this:
       # {
-      #   "people_search" => {
-      #     "people" => {
-      #       "person" => [Array of people],
-      #       "count"  => 25
-      #     }
+      #   "people" => {
+      #     "person" => [Array of people],
+      #     "count"  => 25
       #   }
       # }
       #
@@ -51,9 +49,13 @@ module LinkedIn
       #   }
       # }
       def self.clean_search_hash(hash)
-        hash.each do |key, value|
+        hash.dup.each do |key, value|
           if hash[key].is_a?(Hash) && collection = hash[key].delete(key.singularize)
             hash[key]['data'] = collection
+          end
+
+          if hash[key].is_a?(Array) && collection = hash.delete(key)
+            hash['data'] = collection
           end
         end
 
