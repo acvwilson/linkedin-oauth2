@@ -1,10 +1,10 @@
 # LinkedIn
 
-Ruby wrapper for the [LinkedIn API](http://developer.linkedin.com). Heavily inspired by [John Nunemaker's](http://github.com/jnunemaker) [Twitter gem](http://github.com/jnunemaker/twitter), the LinkedIn gem provides an easy-to-use wrapper for LinkedIn's Oauth2/XML APIs.
+Ruby wrapper for the [LinkedIn API](http://developer.linkedin.com). Heavily inspired by [Wynn Netherland's](http://github.com/pengwynn) [LinkedIn gem](http://github.com/pengwynn/linkedin), this LinkedIn gem provides an easy-to-use wrapper for LinkedIn's Oauth2/XML APIs.
 
 ## Installation
 
-    [sudo] gem install linkedin
+    gem 'linkedin-oauth2', github: 'acvwilson/linkedin-oauth2', require: 'linkedin'
 
 ## Usage
 
@@ -17,10 +17,13 @@ require 'rubygems'
 require 'linkedin'
 
 # get your api keys at https://www.linkedin.com/secure/developer
-client = LinkedIn::Client.new('your_consumer_key', 'your_consumer_secret')
+linkedin_client = LinkedIn::Client.new('your_consumer_key', 'your_consumer_secret')
 
-# authorize from previously fetched oauth2 access tokens
-client.authorize_from_access("OU812")
+# You can use linkedin_client.client as an OAuth2::Client configured for linkedin to get access tokens
+# Check https://github.com/intridea/oauth2 for more information
+
+# authorize from fetched oauth2 access tokens
+linkedin_client.authorize_from_access("OU812")
 
 # you're now free to move about the cabin, call any API method
 ```
