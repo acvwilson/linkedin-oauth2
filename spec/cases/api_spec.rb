@@ -99,13 +99,13 @@ describe LinkedIn::Api do
     it "should load correct company data" do
       client.company(id: 1586).name.should == "Amazon"
 
-      data = client.company(id: 1586, fields: %w{ id name industry locations:(address:(city state country-code) is-headquarters) employee-count-range })
-      data.id.should == '1586'
-      data.name.should == "Amazon"
-      data.employee_count_range.name.should == "10001+"
-      data.industry.should == "Internet"
-      data.locations.data.address.city.should == "Seattle"
-      data.locations.data.is_headquarters.should == "true"
+      result = client.company(id: 1586, fields: %w{ id name industry locations:(address:(city state country-code) is-headquarters) employee-count-range })
+      result.id.should == '1586'
+      result.name.should == "Amazon"
+      result.employee_count_range.name.should == "10001+"
+      result.industry.should == "Internet"
+      result.locations.data.first.address.city.should == "Seattle"
+      result.locations.data.first.is_headquarters.should == "true"
     end
   end
 

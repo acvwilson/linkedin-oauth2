@@ -20,13 +20,21 @@ describe LinkedIn::Mash do
       clean_hash['people'].should_not have_key('person')
       clean_hash['people'].should have_key('data')
     end
-    
+
     it "should modify the hash to avoid collisions" do
       hash = {'update' => [{'name' => "Josh Kalderimis"}]}
       clean_hash = LinkedIn::Mash.clean_search_hash(hash)
 
       clean_hash.should_not have_key('update')
       clean_hash.should have_key('data')
+    end
+
+    it "should deeply modify the hash to make naming sane" do
+      hash = {'people' => {'person' => [{'statuses' => {'status' => [{'body' => 'This is sane!'}]}}]}}
+      clean_hash = LinkedIn::Mash.clean_search_hash(hash)
+
+      clean_hash['people']['data'].first['statuses'].should_not have_key('status')
+      clean_hash['people']['data'].first['statuses'].should have_key('data')
     end
   end
 
@@ -37,7 +45,7 @@ describe LinkedIn::Mash do
         'LastName' => 'Kalderimis',
         '_key' => 1234,
         '_total' => 1234,
-        'values' => {},
+        'count' => 1234,
         'numResults' => 'total_results'
       })
     end
@@ -55,8 +63,8 @@ describe LinkedIn::Mash do
       mash.should have_key('total')
     end
 
-    it "should convert the key values to all" do
-      mash.should have_key('all')
+    it "should convert the key count to batch_count" do
+      mash.should have_key('page_count')
     end
 
     it "should convert the key numResults to total_results" do
@@ -77,12 +85,6 @@ describe LinkedIn::Mash do
 
       time_mash.timestamp.should be_a_kind_of(Time)
       time_mash.timestamp.to_i.should  == 1297083249
-    end
-
-    it "should not try to convert to a Time object if the value isn't an Integer" do
-      time_mash = LinkedIn::Mash.new({ 'timestamp' => 'Foo' })
-
-      time_mash.timestamp.class.should be String
     end
   end
 

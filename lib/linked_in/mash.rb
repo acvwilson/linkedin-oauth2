@@ -46,13 +46,23 @@ module LinkedIn
       # }
       def self.clean_search_hash(hash)
         hash.dup.each do |key, value|
-          if hash[key].is_a?(Hash) && collection = hash[key].delete(key.singularize)
-            hash[key]['data'] = collection
+          
+          if value.is_a?(Hash) && collection = value[key.singularize]
+            collection = [collection] if collection.is_a?(Hash)
+            value[key.singularize] = collection
           end
 
-          if hash[key].is_a?(Array) && collection = hash.delete(key)
-            hash['data'] = collection
+          if value.is_a?(Array)
+            hash['data'] = value
+            hash.delete(key)
+
+            value.each do |item|
+              clean_search_hash(item) if item.is_a?(Hash)
+            end
+
           end
+
+          clean_search_hash(value) if value.is_a?(Hash)
         end
 
         hash
@@ -70,10 +80,10 @@ module LinkedIn
           'id'
         when '_total'
           'total'
-        when 'values'
-          'all'
         when 'numResults'
           'total_results'
+        when 'count'
+          'page_count'
         else
           underscore(key)
         end

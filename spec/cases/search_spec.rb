@@ -55,7 +55,7 @@ describe LinkedIn::Search do
       end
 
       it "should return a facet" do
-        results.facets.data.buckets.bucket.first.name.should == 'Information Technology and Services'
+        results.facets.data.first.buckets.data.first.name.should == 'Information Technology and Services'
       end
     end
 
