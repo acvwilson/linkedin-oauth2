@@ -1,3 +1,5 @@
+require 'xmlsimple'
+
 module LinkedIn
   module Api
 
@@ -5,20 +7,20 @@ module LinkedIn
 
       def add_share(share)
         path = "/people/~/shares"
-        defaults = {share: {visibility: {code: "anyone"}}}
-        post(path, body: hash_to_xml(defaults[:share].merge(share)), "Content-Type" => "application/xml")
+        body = {share: {visibility: {code: "anyone"}, comment: share[:comment]}}
+        post(path, body: hash_to_xml(body), headers: {"Content-Type" => "application/xml"})
       end
 
       def join_group(group_id)
         path = "/people/~/group-memberships/#{group_id}"
         body = {'membership-state' => {code: 'member' }}
-        put(path, body: hash_to_xml(body), "Content-Type" => "application/xml")
+        put(path, body: hash_to_xml(body), headers: {"Content-Type" => "application/xml"})
       end
 
       def add_job_bookmark(bookmark)
         path = "/people/~/job-bookmarks"
         body = {job: {id: bookmark}}
-        post(path, body: hash_to_xml(body), "Content-Type" => "application/xml")
+        post(path, body: hash_to_xml(body), headers: {"Content-Type" => "application/xml"})
       end
 
       # def share(options={})
@@ -30,7 +32,7 @@ module LinkedIn
       def update_comment(network_key, comment)
         path = "/people/~/network/updates/key=#{network_key}/update-comments"
         body = {comment: comment}
-        post(path, body: hash_to_xml(body), "Content-Type" => "application/xml")
+        post(path, body: hash_to_xml(body), headers: {"Content-Type" => "application/xml"})
       end
       #
       # def update_network(message)
@@ -42,13 +44,13 @@ module LinkedIn
       def like_share(network_key)
         path = "/people/~/network/updates/key=#{network_key}/is-liked"
         body = {'is-liked' => true}
-        put(path, body: hash_to_xml(body), "Content-Type" => "application/xml")
+        put(path, body: hash_to_xml(body), headers: {"Content-Type" => "application/xml"})
       end
 
       def unlike_share(network_key)
         path = "/people/~/network/updates/key=#{network_key}/is-liked"
         body = {'is-liked' => false}
-        put(path, body: hash_to_xml(body), "Content-Type" => "application/xml")
+        put(path, body: hash_to_xml(body), headers: {"Content-Type" => "application/xml"})
       end
 
       def send_message(subject, body, recipient_paths)
@@ -63,13 +65,13 @@ module LinkedIn
                 end
             }
         }
-        post(path, body: hash_to_xml(message), "Content-Type" => "application/xml")
+        post(path, body: hash_to_xml(message), headers: {"Content-Type" => "application/xml"})
       end
 
       private
 
         def hash_to_xml(hash)
-          ::XmlSimple.xml_out(hash, keeproot: true, noindent: true)
+          ::XmlSimple.xml_out(hash, keeproot: true, noindent: true, noattr: true)
         end
 
     end
