@@ -55,15 +55,16 @@ module LinkedIn
 
       def send_message(subject, body, recipient_paths)
         path = "/people/~/mailbox"
-      
-        message = {
-            'subject' => subject, 
+        recipient_paths = Array(recipient_paths)
+
+        message = { 'mailbox-item' => {
+            'subject' => subject,
             'body' => body,
             'recipients' => {
-                'values' => recipient_paths.map do |profile_path| 
-                  { 'person' => { '_path' => "/people/#{profile_path}" } } 
+                'recipient' => recipient_paths.map do |profile_path|
+                  { 'person' => { '@path' => "/people/#{profile_path}" } }
                 end
-            }
+            } }
         }
         post(path, body: hash_to_xml(message), headers: {"Content-Type" => "application/xml"})
       end
@@ -71,7 +72,7 @@ module LinkedIn
       private
 
         def hash_to_xml(hash)
-          ::XmlSimple.xml_out(hash, keeproot: true, noindent: true, noattr: true)
+          ::XmlSimple.xml_out(hash, keeproot: 1, noindent: true, attrprefix: true  )
         end
 
     end
