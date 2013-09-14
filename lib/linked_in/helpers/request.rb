@@ -36,24 +36,21 @@ module LinkedIn
       private
 
         def raise_errors(response)
-          # Even if the xml answer contains the HTTP status code, LinkedIn also sets this code
-          # in the HTTP answer (thankfully).
+          data = Mash.from_xml(response.body)
+
           case response.status.to_i
           when 401
-            data = Mash.from_xml(response.body)
             raise LinkedIn::Errors::UnauthorizedError.new(data), "(#{data.status}): #{data.message}"
           when 400
-            data = Mash.from_xml(response.body)
             raise LinkedIn::Errors::GeneralError.new(data), "(#{data.status}): #{data.message}"
           when 403
-            data = Mash.from_xml(response.body)
             raise LinkedIn::Errors::AccessDeniedError.new(data), "(#{data.status}): #{data.message}"
           when 404
-            raise LinkedIn::Errors::NotFoundError, "(#{response.code}): #{response.message}"
+            raise LinkedIn::Errors::NotFoundError, "(#{data.status}): #{data.message}"
           when 500
-            raise LinkedIn::Errors::InformLinkedInError, "LinkedIn had an internal error. Please let them know in the forum. (#{response.code}): #{response.message}"
+            raise LinkedIn::Errors::InformLinkedInError, "LinkedIn had an internal error. Please let them know in the forum. (#{data.status}): #{data.message}"
           when 502..503
-            raise LinkedIn::Errors::UnavailableError, "(#{response.code}): #{response.message}"
+            raise LinkedIn::Errors::UnavailableError, "(#{data.status}): #{data.message}"
           end
         end
 
